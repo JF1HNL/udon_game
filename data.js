@@ -1,10 +1,325 @@
-export default data;
+// export default data;
 const d = {
   img: '',
   date: ''
 };
 
-const data = [
+const all_insta_data = [
+  "ByR91bwFA3G", // 6/4のうどん
+  "ByKaxehlmBE",
+  "Bx3yYOOFM7W",
+  "Bx1IeVkHkem",
+  "Bxt6O6XHhhe",
+  "BxluW6gHg8x",
+  "Bxb36GunYIt",
+  "BxWw03rliYb",
+  "BxTwds8l2-4",
+  "Bw5-F0tFYvE",
+  "Bwvq5Chl_m7",
+  "Bwl0YjBhu9J",
+  "BwgNBrgBflT",
+  "BwONWZ3hCEE",
+  "Bv5kjoylo4B",
+  "Bv28Ds7FSSF",
+  "BvskGYTlo-Q",
+  "BvqDKipFwIR",
+  "BvdHjzznpMV",
+  "BvIuhrXliE4",
+  "BvBQpp4Fk3J",
+  "Bu4xQzXFaXW",
+  "BusNZbLl0B_",
+  "BufZSUblxUQ",
+  "Bua5ul6FpiD",
+  "BtueRUEl0As",
+  "Btfqrf4lPAF",
+  "Btc3_-4loM-",
+  "BtSF1BDlowi",
+  "BtAR2T4FoeI",
+  "BsuFnqQFmfw",
+  "BsHjnIhFeBM",
+  "Br1hOQ8FCJt",
+  "BrjvmuXljWU",
+  "BrWdKYeFrM5",
+  "BrRWDO9lq09",
+  "BrEa7MZl7Uk",
+  "Bq1oxSpFSe4" // 2018-12-01
+]
+
+const menu = {
+  udon:{
+    umakaranikutuke:{
+      name: '旨辛肉つけうどん',
+      price: 690
+    },
+    toritya_syu_negidare:{
+      name: '鶏チャーシューねぎだれぶっかけ',
+      price: 640
+    },
+    kamatama:{
+      name: "釜玉うどん",
+      price: 360
+    },
+    orosisyouyu:{
+      name: "おろし醤油うどん",
+      price: 390
+    },
+    kamaage:{
+      name: "釜揚げうどん",
+      price: 290
+    },
+    kamaagekazoku:{
+      name: "釜揚げ家族うどん",
+      price: 1260
+    },
+    mentaikamatama:{
+      name: "明太釜玉うどん",
+      price: 430
+    },
+    tororosyouyu:{
+      name: "とろろ醤油うどん",
+      price: 390
+    },
+    bukkake:{
+      name: "ぶっかけうどん",
+      price: 290
+    },
+    torotama:{
+      name: "とろ玉うどん",
+      price: 430
+    },
+    kare_:{
+      name: "カレーうどん",
+      price: 490
+    },
+    kitune:{
+      name: 'きつねうどん',
+      price: 430
+    },
+    kake:{
+      name: "かけうどん",
+      price: 290
+    },
+    zaru:{
+      name: "ざるうどん",
+      price: 290
+    },
+    gyuusukikamatama:{
+      name: '牛すき釜玉うどん',
+      price: 690
+    },
+    niku: {
+      name: '肉うどん',
+      price: 590
+    },
+    konbu: {
+      name: '昆布うどん',
+      price: 350
+    },
+    tukimiwakameudon: {
+      name: '月見わかめうどん',
+      price: 410
+    },
+    takanamentaikamatama: {
+      name: '高菜明太釜玉うどん',
+      price: 490
+    },
+    musidoribukkake: {
+      name: '蒸し鶏ぶっかけうどん',
+      price: 490
+    },
+    hiyasiumakaratantan: {
+      name: '冷やしうま辛坦々うどん',
+      price: 650
+    },
+    gyuutoro: {
+      name: '牛とろうどん',
+      price: 690
+    }
+  },
+  tenpura: {
+    yasaikakiage: {
+      name: "野菜かき揚げ天",
+      price: 130
+    },
+    kasiwa: {
+      name: "かしわ天",
+      price: 150
+    },
+    ebi: {
+      name: "えび天",
+      price: 150
+    },
+    ika: {
+      name: "いか天",
+      price: 120
+    },
+    satumaimo: {
+      name: "さつまいも天",
+      price: 110
+    },
+    nasu: {
+      name: "なす天",
+      price: 110
+    },
+    kabotya: {
+      name: "かぼちゃ天",
+      price: 110
+    },
+    tikuwa: {
+      name: "ちくわ天",
+      price: 110
+    },
+    hanjyukutamago: {
+      name: "半熟玉子天",
+      price: 120
+    },
+    tori: {
+      name: '鶏天',
+      price: 80
+    },
+    maitake: {
+      name: '舞茸天',
+      price: 140
+    },
+    jyanbokanikama: {
+      name: 'ジャンボカニカマ天',
+      price: 160
+    },
+    uinna_: {
+      name: 'ウインナー天',
+      price: 130
+    },
+    okonomiyakikakiage: {
+      name: 'お好み焼きかき揚げ',
+      price: 180
+    },
+    tikuwanokakiage: {
+      name: 'ちくわのかき揚げ',
+      price: 180
+    },
+    takenoko: {
+      name: 'たけのこ天',
+      price: 130
+    },
+    siitake: {
+      name: 'しいたけ天',
+      price: 130
+    },
+    koebinokakiage: {
+      name: '小エビのかき揚げ',
+      price: 120
+    },
+    sintamanegi: {
+      name: '新たまねぎ天',
+      price: 130
+    },
+    karekarenokakiage: {
+      name: 'カレカレのかき揚げ',
+      price: 180
+    },
+    imoimonokakiage: {
+      name: 'イモイモのかき揚げ',
+      price: 180
+    }
+  },
+  omusubi: {
+    inari: {
+      name: "いなり",
+      price: 100
+    },
+    sake: {
+      name: "鮭（おにぎり）",
+      price: 140
+    },
+    ume: {
+      name: "梅（おにぎり）",
+      price: 130
+    },
+    mentaiko: {
+      name: "明太子（おにぎり）",
+      price: 140
+    },
+    konbu: {
+      name: "こんぶ（おにぎり）",
+      price: 130,
+    },
+    saketowakame: {
+      name: '鮭とわかめのおにぎり',
+      price: 90
+    }
+  },
+  topping: {
+    gohan: {
+      name: "天丼用ごはん",
+      price: 130
+    },
+    daikonorosi: {
+      name: "大根おろし",
+      price: 70
+    },
+    mentaiko: {
+      name: "明太子",
+      price: 70
+    },
+    kituneage: {
+      name: "きつねあげ",
+      price: 140
+    },
+    tororo: {
+      name: "とろろ",
+      price: 70
+    },
+    onsentamago: {
+      name: "温泉玉子",
+      price: 70
+    },
+    namatamago: {
+      name: "生玉子",
+      price: 70
+    },
+    taberura_yu: {
+      name: '食べるラー油',
+      price: 50
+    }
+  }
+};
+
+for(let i in menu.udon){
+  menu.udon[i].return_object = function(e){
+    return {
+      name: menu.udon[i].name,
+      price: menu.udon[i].price + e.price,
+      size: e.size
+    }
+  }
+}
+
+const size = {
+  nami: {
+    size: '並',
+    price: 0
+  },
+  dai: {
+    size: '大',
+    price: 100
+  },
+  toku: {
+    size: '得',
+    price: 200
+  }
+}
+
+
+const all_list = [
+  //クーポン用
+  //うどん
+  //天ぷら
+  //トッピング
+  
+  //other
+];
+
+const insta_data = [
   {
     img: 'BlcBWgBHVR_',
     date: '2018-07-20',
@@ -35,7 +350,7 @@ const data = [
     menu: [
       menu.udon.kamaage.return_object(size.dai),
       menu.tenpura.tori,
-      menu.tenpura,tori
+      menu.tenpura.tori
     ]
   },
   {
@@ -195,7 +510,7 @@ const data = [
     img: 'Bq1oxSpFSe4',
     date: '2018-12-01',
     menu: [
-      menu.udon.kmaage.return_object(size.dai)
+      menu.udon.kamaage.return_object(size.dai)
     ]
   },
   {
@@ -242,7 +557,7 @@ const data = [
     img: 'BsHjnIhFeBM',
     date: '2019-01-02',
     menu: [
-      menu.udon.kmaage.return_object(size.dai),
+      menu.udon.kamaage.return_object(size.dai),
       menu.tenpura.kasiwa,
       menu.tenpura.okonomiyakikakiage
     ]
@@ -368,7 +683,7 @@ const data = [
     img: 'BvskGYTlo-Q',
     date: '2019-04-01',
     menu: [
-      menu.udon.kmaage.return_object(size.toku),
+      menu.udon.kamaage.return_object(size.toku),
       menu.tenpura.tikuwa
     ]
   },
@@ -678,317 +993,5 @@ const data = [
   }
 ];
 
-const all_insta_data = [
-  "ByR91bwFA3G", // 6/4のうどん
-  "ByKaxehlmBE",
-  "Bx3yYOOFM7W",
-  "Bx1IeVkHkem",
-  "Bxt6O6XHhhe",
-  "BxluW6gHg8x",
-  "Bxb36GunYIt",
-  "BxWw03rliYb",
-  "BxTwds8l2-4",
-  "Bw5-F0tFYvE",
-  "Bwvq5Chl_m7",
-  "Bwl0YjBhu9J",
-  "BwgNBrgBflT",
-  "BwONWZ3hCEE",
-  "Bv5kjoylo4B",
-  "Bv28Ds7FSSF",
-  "BvskGYTlo-Q",
-  "BvqDKipFwIR",
-  "BvdHjzznpMV",
-  "BvIuhrXliE4",
-  "BvBQpp4Fk3J",
-  "Bu4xQzXFaXW",
-  "BusNZbLl0B_",
-  "BufZSUblxUQ",
-  "Bua5ul6FpiD",
-  "BtueRUEl0As",
-  "Btfqrf4lPAF",
-  "Btc3_-4loM-",
-  "BtSF1BDlowi",
-  "BtAR2T4FoeI",
-  "BsuFnqQFmfw",
-  "BsHjnIhFeBM",
-  "Br1hOQ8FCJt",
-  "BrjvmuXljWU",
-  "BrWdKYeFrM5",
-  "BrRWDO9lq09",
-  "BrEa7MZl7Uk",
-  "Bq1oxSpFSe4" // 2018-12-01
-]
 
-const menu = {
-  udon:{
-    umakaranikutuke:{
-      name: '旨辛肉つけうどん',
-      price: 690
-    },
-    toritya_syu_negidare:{
-      name: '鶏チャーシューねぎだれぶっかけ',
-      price: 640
-    },
-    kamatama:{
-      name: "釜玉うどん",
-      price: 360
-    },
-    orosisyouyu:{
-      name: "おろし醤油うどん",
-      price: 390
-    },
-    kmaage:{
-      name: "釜揚げうどん",
-      price: 290
-    },
-    kamaagekazoku:{
-      name: "釜揚げ家族うどん",
-      price: 1260
-    },
-    mentaikamatama:{
-      name: "明太釜玉うどん",
-      price: 430
-    },
-    tororosyouyu:{
-      name: "とろろ醤油うどん",
-      price: 390
-    },
-    bukkake:{
-      name: "ぶっかけうどん",
-      price: 290
-    },
-    torotama:{
-      name: "とろ玉うどん",
-      price: 430
-    },
-    kare_:{
-      name: "カレーうどん",
-      price: 490
-    },
-    kitune:{
-      name: 'きつねうどん',
-      price: 430
-    },
-    kake:{
-      name: "かけうどん",
-      price: 290
-    },
-    zaru:{
-      name: "ざるうどん",
-      price: 290
-    },
-    gyuusukikamatama:{
-      name: '牛すき釜玉うどん',
-      price: 690
-    },
-    niku: {
-      name: '肉うどん',
-      price: 590
-    },
-    konbu: {
-      name: '昆布うどん',
-      price: 350
-    },
-    tukimiwakameudon: {
-      name: '月見わかめうどん',
-      price: 410
-    },
-    takanamentaikamatama: {
-      name: '高菜明太釜玉うどん',
-      price: 490
-    },
-    musidoribukkake: {
-      name: '蒸し鶏ぶっかけうどん',
-      price: 490
-    },
-    hiyasiumakaratantan: {
-      name: '冷やしうま辛坦々うどん',
-      price: 650
-    },
-    gyuutoro: {
-      name: '牛とろうどん',
-      price: 690
-    }
-  },
-  tenpura: {
-    yasaikakiage: {
-      name: "野菜かき揚げ天",
-      price: 130
-    },
-    kasiwa: {
-      name: "かしわ天",
-      price: 150
-    },
-    ebi: {
-      name: "えび天",
-      price: 150
-    },
-    ika: {
-      name: "いか天",
-      price: 120
-    },
-    satumaimo: {
-      name: "さつまいも天",
-      price: 110
-    },
-    nasu: {
-      name: "なす天",
-      price: 110
-    },
-    kabotya: {
-      name: "かぼちゃ天",
-      price: 110
-    },
-    tikuwa: {
-      name: "ちくわ天",
-      price: 110
-    },
-    hanjyukutamago: {
-      name: "半熟玉子天",
-      price: 120
-    },
-    tori: {
-      name: '鶏天',
-      price: 80
-    },
-    maitake: {
-      name: '舞茸天',
-      price: 140
-    },
-    jyanbokanikama: {
-      name: 'ジャンボカニカマ天',
-      price: 160
-    },
-    uinna_: {
-      name: 'ウインナー天',
-      price: 130
-    },
-    okonomiyakikakiage: {
-      name: 'お好み焼きかき揚げ',
-      price: 180
-    },
-    tikuwanokakiage: {
-      name: 'ちくわのかき揚げ',
-      price: 180
-    },
-    takenoko: {
-      name: 'たけのこ天',
-      price: 130
-    },
-    siitake: {
-      name: 'しいたけ天',
-      price: 130
-    },
-    koebinokakiage: {
-      name: '小エビのかき揚げ',
-      price: 120
-    },
-    sintamanegi: {
-      name: '新たまねぎ天',
-      price: 130
-    },
-    karekarenokakiage: {
-      name: 'カレカレのかき揚げ',
-      price: 180
-    },
-    imoimonokakiage: {
-      name: 'イモイモのかき揚げ',
-      price: 180
-    }
-  },
-  omusubi: {
-    inari: {
-      name: "いなり",
-      price: 100
-    },
-    sake: {
-      name: "鮭（おにぎり）",
-      price: 140
-    },
-    ume: {
-      name: "梅（おにぎり）",
-      price: 130
-    },
-    mentaiko: {
-      name: "明太子（おにぎり）",
-      price: 140
-    },
-    konbu: {
-      name: "こんぶ（おにぎり）",
-      price: 130,
-    },
-    saketowakame: {
-      name: '鮭とわかめのおにぎり',
-      price: 90
-    }
-  },
-  topping: {
-    gohan: {
-      name: "天丼用ごはん",
-      price: 130
-    },
-    daikonorosi: {
-      name: "大根おろし",
-      price: 70
-    },
-    mentaiko: {
-      name: "明太子",
-      price: 70
-    },
-    kituneage: {
-      name: "きつねあげ",
-      price: 140
-    },
-    tororo: {
-      name: "とろろ",
-      price: 70
-    },
-    onsentamago: {
-      name: "温泉玉子",
-      price: 70
-    },
-    namatamago: {
-      name: "生玉子",
-      price: 70
-    },
-    taberura_yu: {
-      name: '食べるラー油',
-      price: 50
-    }
-  }
-};
-
-for(let i in menu.udon){
-  menu.udon[i].return_object = function(e){
-    return {
-      name: menu.udon[i].name,
-      price: menu.udon[i].price + e.price,
-      size: e.size
-    }
-  }
-}
-
-const size = {
-  nami: {
-    size: '並',
-    price: 0
-  },
-  dai: {
-    size: '大',
-    price: 100
-  },
-  toku: {
-    size: '得',
-    price: 200
-  }
-}
-
-
-const all_list = [
-  //クーポン用
-  //うどん
-  //天ぷら
-  //トッピング
-  
-  //other
-];
+console.log(insta_data.length);
