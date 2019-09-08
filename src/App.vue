@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    
+    <top v-if="page_judge(PAGE_NAME.top)" :page='page'/>
+    <recture v-if="page_judge(PAGE_NAME.recture)" :page='page'/>
+    <game v-if="page_judge(PAGE_NAME.game)" :page='page'/>
+    <result v-if="page_judge(PAGE_NAME.result)" :page='page'/>
   </div>
 </template>
 
@@ -10,6 +13,8 @@ import top from './components/top/index.vue'
 import recture from './components/recture/index.vue'
 import game from './components/game/index.vue'
 import result from './components/result/index.vue'
+
+import PAGE_NAME from './const.js'
 
 export default {
   name: 'app',
@@ -21,7 +26,15 @@ export default {
   },
   data: function(){
     return {
-      page: 0
+      page: PAGE_NAME.top
+    }
+  },
+  methods: {
+    page_judge: function(e){
+      if(this.data.page === e){
+        return true
+      }
+      return false
     }
   }
 }
