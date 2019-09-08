@@ -14,7 +14,9 @@ import recture from './components/recture/index.vue'
 import game from './components/game/index.vue'
 import result from './components/result/index.vue'
 
-import PAGE_NAME from './const.js'
+// import PAGE_NAME from './const.js'
+// import test from './const.js'
+
 
 export default {
   name: 'app',
@@ -26,7 +28,12 @@ export default {
   },
   data: function(){
     return {
-      PAGE_NAME,
+      PAGE_NAME: {
+        top: 'top',
+        recture: 'recture',
+        game: 'game',
+        result: 'result'
+      },
       page: 'top'
     }
   },
