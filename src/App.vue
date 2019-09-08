@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>top</h1>
     <top v-if="page_judge(PAGE_NAME.top)" :page='page'/>
     <recture v-if="page_judge(PAGE_NAME.recture)" :page='page'/>
     <game v-if="page_judge(PAGE_NAME.game)" :page='page'/>
@@ -8,7 +9,6 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import top from './components/top/index.vue'
 import recture from './components/recture/index.vue'
 import game from './components/game/index.vue'
@@ -26,7 +26,8 @@ export default {
   },
   data: function(){
     return {
-      page: PAGE_NAME.top
+      PAGE_NAME,
+      page: 'top'
     }
   },
   methods: {
