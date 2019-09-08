@@ -1,4 +1,4 @@
-// export default data;
+export {insta_data};
 const d = {
   img: '',
   date: ''
