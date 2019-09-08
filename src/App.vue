@@ -6,11 +6,23 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
+import top from './components/top/index.vue'
+import recture from './components/recture/index.vue'
+import game from './components/game/index.vue'
+import result from './components/result/index.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    top,
+    recture,
+    game,
+    result
+  },
+  data: function(){
+    return {
+      page: 0
+    }
   }
 }
 </script>
