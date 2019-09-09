@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>recture</h1>
-    <input type="button" value="go to top" @click="page = PAGE_NAME.top" >
+    <input type="button" value="go to top" click="page()" >
   </div>
 </template>
 
@@ -9,9 +9,19 @@
 import PAGE_NAME from '../../const.js'
 
 export default {
-  props: ['page'],
-  data: function() {
+  props: {
     PAGE_NAME
+  },
+  data: function() {
+    // PAGE_NAME
+    return {
+
+    }
+  },
+  methods: {
+    page: function(){
+      this.$emit(PAGE_NAME.top)
+    }
   }
 }
 </script>

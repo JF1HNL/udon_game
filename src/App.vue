@@ -1,18 +1,31 @@
 <template>
   <div id="app">
     <h1>top</h1>
-    <!-- <top v-if="page_judge(PAGE_NAME.top)" :page='page'/>
-    <recture v-if="page_judge(PAGE_NAME.recture)" :page='page'/>
-    <game v-if="page_judge(PAGE_NAME.game)" :page='page'/>
-    <result v-if="page_judge(PAGE_NAME.result)" :page='page'/> -->
+    <top 
+      v-if="page_judge(PAGE_NAME.top)"
+      @recture='page_chenge(PAGE_NAME.recture)'
+      @game='page_chenge(PAGE_NAME.game)'
+    />
+    <recture 
+      v-if="page_judge(PAGE_NAME.recture)"
+      @top='page_chenge(PAGE_NAME.top)'
+    />
+    <game 
+      v-if="page_judge(PAGE_NAME.game)" 
+      @result='page_chenge(PAGE_NAME.result)'
+    />
+    <result
+      v-if="page_judge(PAGE_NAME.result)"
+      @top='page_chenge(PAGE_NAME.top)'
+    />
   </div>
 </template>
 
 <script>
-// import top from './components/top/index.vue'
-// import recture from './components/recture/index.vue'
-// import game from './components/game/index.vue'
-// import result from './components/result/index.vue'
+import top from './components/top/index.vue'
+import recture from './components/recture/index.vue'
+import game from './components/game/index.vue'
+import result from './components/result/index.vue'
 
 import PAGE_NAME from './const.js'
 // import test from './const.js'
@@ -20,24 +33,26 @@ import PAGE_NAME from './const.js'
 
 export default {
   name: 'app',
-  // components: {
-  //   top,
-  //   recture,
-  //   game,
-  //   result
-  // },
+  components: {
+    top,
+    recture,
+    game,
+    result
+  },
   data: function(){
     return {
-      PAGE_NAME,
       page: 'top'
     }
   },
   methods: {
     page_judge: function(e){
-      if(this.data.page === e){
+      if(this.page === e){
         return true
       }
       return false
+    },
+    page_chenge: function(e){
+      this.page = e;
     }
   }
 }
