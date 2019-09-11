@@ -6,16 +6,13 @@
 </template>
 
 <script>
-import PAGE_NAME from '../../const.js'
+import {PAGE_NAME} from '../../const.js'
 
 export default {
-  props: {
-    PAGE_NAME
-  },
   data: function() {
     // PAGE_NAME
     return {
-
+      PAGE_NAME
     }
   },
   methods: {

@@ -1,4 +1,4 @@
-export default PAGE_NAME ;
+export {PAGE_NAME} ;
 
 const PAGE_NAME = {
   top: 'top',
