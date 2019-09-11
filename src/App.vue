@@ -3,20 +3,20 @@
     <h1>top</h1>
     <top 
       v-if="page_judge(PAGE_NAME.top)"
-      @recture='page_chenge(PAGE_NAME.recture)'
-      @game='page_chenge(PAGE_NAME.game)'
+      v-on:recture='page_chenge(PAGE_NAME.recture)'
+      v-on:game='page_chenge(PAGE_NAME.game)'
     />
     <recture 
       v-if="page_judge(PAGE_NAME.recture)"
-      @top='page_chenge(PAGE_NAME.top)'
+      v-on:top='page_chenge(PAGE_NAME.top)'
     />
     <game 
       v-if="page_judge(PAGE_NAME.game)" 
-      @result='page_chenge(PAGE_NAME.result)'
+      v-on:result='page_chenge(PAGE_NAME.result)'
     />
     <result
       v-if="page_judge(PAGE_NAME.result)"
-      @top='page_chenge(PAGE_NAME.top)'
+      v-on:top='page_chenge(PAGE_NAME.top)'
     />
   </div>
 </template>

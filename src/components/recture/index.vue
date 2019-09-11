@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>recture</h1>
-    <input type="button" value="go to top" click="page()" >
+    <input type="button" value="go to top" @click="page(PAGE_NAME.top)" >
   </div>
 </template>
 

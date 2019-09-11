@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>game</h1>
-    <input type="button" value="result" click="page()" >
+    <input type="button" value="result" @click="page(PAGE_NAME.result)" >
   </div>
 </template>
 
