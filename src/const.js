@@ -1,4 +1,4 @@
-export {PAGE_NAME} ;
+export {PAGE_NAME, INSTA} ;
 
 const PAGE_NAME = {
   top: 'top',
@@ -6,3 +6,5 @@ const PAGE_NAME = {
   game: 'game',
   result: 'result'
 }
+
+const INSTA = 'instagram';
