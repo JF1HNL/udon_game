@@ -2,7 +2,15 @@
   <div>
     <h1>game</h1>
     <input type="button" value="result" @click="page(PAGE_NAME.result)" >
-    <Img v-for='(it, i) in udon_ary' :key='i' :display_flag="true" :url="url_maker(it.img)" :position="123"/>
+    <div v-for='(udon_ary_, j) in udon_ary' :key='j'>
+      <Img
+        v-for='(it, i) in udon_ary_'
+        :key='i'
+        :display_flag="true"
+        :url="url_maker(it.img)"
+        @select='udon_click(it.position_id)'
+      />
+    </div>
   </div>
 </template>
 
@@ -22,6 +30,7 @@ export default {
   data: function() {
     // PAGE_NAME
     return {
+      select_object: '',
       udon_ary: [],
       PAGE_NAME
     }
@@ -94,9 +103,13 @@ export default {
               ]
             ]
           )
+          return_ary[i][j].position_id = '' + i + j;
         }
       }
       this.udon_ary = return_ary;
+    },
+    udon_click: function(e){
+      this.select_object = e;
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="display_flag">
-      <img :src="url" @click="udon_click(position)">
+      <img :src="url" @click="udon_click()">
     </div>
   </div>
 </template>
@@ -10,12 +10,11 @@
 export default {
   props: [
     'display_flag',
-    'url',
-    'position'
+    'url'
   ],
   methods: {
-    udon_click: function(position){
-      this.$emit(position)
+    udon_click: function(){
+      this.$emit('select')
     }
   }
 }
