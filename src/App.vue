@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>top</h1>
     <top 
       v-if="page_judge(PAGE_NAME.top)"
       v-on:recture='page_chenge(PAGE_NAME.recture)'

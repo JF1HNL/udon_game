@@ -1,15 +1,26 @@
 <template>
   <div>
-    <h1>udon-game</h1>
-    <input type="button" value="recture" @click="page(PAGE_NAME.recture)" >
-    <input type="button" value="game" @click="page(PAGE_NAME.game)" >
+    <div>udon-game</div>
+    <div>
+      <input type="button" value="遊び方" @click="page(PAGE_NAME.recture)" >
+    </div>
+    <div>
+      <input type="button" value="ゲームスタート！" @click="page(PAGE_NAME.game)" >
+    </div>
+    <div>
+      <Insta/>
+    </div>
   </div>
 </template>
 
 <script>
+import Insta from '../parts/button.vue'
 import {PAGE_NAME} from '../../const.js'
 
 export default {
+  components: {
+    Insta
+  },
   data: function() {
     // PAGE_NAME
     return {
