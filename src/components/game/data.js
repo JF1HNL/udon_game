@@ -993,5 +993,6 @@ const insta_data = [
   }
 ];
 
-
-console.log(insta_data.length);
+for(let i in insta_data){
+  insta_data[i].id = i;
+}
