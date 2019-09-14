@@ -2,7 +2,7 @@
   <div>
     <h1>game</h1>
     <input type="button" value="result" @click="page(PAGE_NAME.result)" >
-    <Img v-for='(it, i) in insta_data' :key='i' :display_flag="true" :url="url_maker(it.img)" :position="123"/>
+    <Img v-for='(it, i) in udon_ary' :key='i' :display_flag="true" :url="url_maker(it.img)" :position="123"/>
   </div>
 </template>
 
@@ -15,7 +15,6 @@ import {insta_data} from './data.js'
 export default {
   mounted: function(){
     this.shuffle_data();
-    console.log(this.udon_ary);
   },
   components: {
     Img

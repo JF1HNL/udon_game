@@ -1,49 +1,49 @@
 export {insta_data};
-const d = {
-  img: '',
-  date: ''
-};
+// const d = {
+//   img: '',
+//   date: ''
+// };
 
-const all_insta_data = [
-  "ByR91bwFA3G", // 6/4のうどん
-  "ByKaxehlmBE",
-  "Bx3yYOOFM7W",
-  "Bx1IeVkHkem",
-  "Bxt6O6XHhhe",
-  "BxluW6gHg8x",
-  "Bxb36GunYIt",
-  "BxWw03rliYb",
-  "BxTwds8l2-4",
-  "Bw5-F0tFYvE",
-  "Bwvq5Chl_m7",
-  "Bwl0YjBhu9J",
-  "BwgNBrgBflT",
-  "BwONWZ3hCEE",
-  "Bv5kjoylo4B",
-  "Bv28Ds7FSSF",
-  "BvskGYTlo-Q",
-  "BvqDKipFwIR",
-  "BvdHjzznpMV",
-  "BvIuhrXliE4",
-  "BvBQpp4Fk3J",
-  "Bu4xQzXFaXW",
-  "BusNZbLl0B_",
-  "BufZSUblxUQ",
-  "Bua5ul6FpiD",
-  "BtueRUEl0As",
-  "Btfqrf4lPAF",
-  "Btc3_-4loM-",
-  "BtSF1BDlowi",
-  "BtAR2T4FoeI",
-  "BsuFnqQFmfw",
-  "BsHjnIhFeBM",
-  "Br1hOQ8FCJt",
-  "BrjvmuXljWU",
-  "BrWdKYeFrM5",
-  "BrRWDO9lq09",
-  "BrEa7MZl7Uk",
-  "Bq1oxSpFSe4" // 2018-12-01
-]
+// const all_insta_data = [
+//   "ByR91bwFA3G", // 6/4のうどん
+//   "ByKaxehlmBE",
+//   "Bx3yYOOFM7W",
+//   "Bx1IeVkHkem",
+//   "Bxt6O6XHhhe",
+//   "BxluW6gHg8x",
+//   "Bxb36GunYIt",
+//   "BxWw03rliYb",
+//   "BxTwds8l2-4",
+//   "Bw5-F0tFYvE",
+//   "Bwvq5Chl_m7",
+//   "Bwl0YjBhu9J",
+//   "BwgNBrgBflT",
+//   "BwONWZ3hCEE",
+//   "Bv5kjoylo4B",
+//   "Bv28Ds7FSSF",
+//   "BvskGYTlo-Q",
+//   "BvqDKipFwIR",
+//   "BvdHjzznpMV",
+//   "BvIuhrXliE4",
+//   "BvBQpp4Fk3J",
+//   "Bu4xQzXFaXW",
+//   "BusNZbLl0B_",
+//   "BufZSUblxUQ",
+//   "Bua5ul6FpiD",
+//   "BtueRUEl0As",
+//   "Btfqrf4lPAF",
+//   "Btc3_-4loM-",
+//   "BtSF1BDlowi",
+//   "BtAR2T4FoeI",
+//   "BsuFnqQFmfw",
+//   "BsHjnIhFeBM",
+//   "Br1hOQ8FCJt",
+//   "BrjvmuXljWU",
+//   "BrWdKYeFrM5",
+//   "BrRWDO9lq09",
+//   "BrEa7MZl7Uk",
+//   "Bq1oxSpFSe4" // 2018-12-01
+// ]
 
 const menu = {
   udon:{
@@ -310,14 +310,14 @@ const size = {
 }
 
 
-const all_list = [
-  //クーポン用
-  //うどん
-  //天ぷら
-  //トッピング
+// const all_list = [
+//   //クーポン用
+//   //うどん
+//   //天ぷら
+//   //トッピング
   
-  //other
-];
+//   //other
+// ];
 
 const insta_data = [
   {
