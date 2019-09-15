@@ -30,7 +30,7 @@ export default {
   data: function() {
     // PAGE_NAME
     return {
-      select_object: '',
+      select_object: [],
       udon_ary: [],
       PAGE_NAME
     }
@@ -103,13 +103,13 @@ export default {
               ]
             ]
           )
-          return_ary[i][j].position_id = '' + i + j;
+          return_ary[i][j].position_id = [i, j];
         }
       }
       this.udon_ary = return_ary;
     },
     udon_click: function(e){
-      this.select_object = e;
+      this.select_object = this.udon_ary[e[0]][e[1]];
     }
   }
 }
