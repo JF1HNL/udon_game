@@ -2,17 +2,31 @@
   <div>
     <h1>game</h1>
     <input type="button" value="result" @click="page(PAGE_NAME.result)" >
-    <div v-for='(udon_ary_, j) in udon_ary' :key='j'>
+    <div v-for='(udon_ary_, j) in udon_ary' :key='j' class="parent">
       <Img
         v-for='(it, i) in udon_ary_'
         :key='i'
-        :display_flag="true"
-        :url="url_maker(it.img)"
+        :display_flag="it.display_flag"
+        :geted_flag="it.geted_flag"
+        :url="url_maker(it.data.img)"
         @select='udon_click(it.position_id)'
+        class="child"
       />
     </div>
   </div>
 </template>
+
+<style>
+  .parent {
+    display: flex;
+    justify-content: space-around;
+  }
+  .child {
+    height: 18.75vw;
+    width: 25vw;
+  }
+</style>
+
 
 <script>
 import {PAGE_NAME} from '../../const.js'
@@ -96,20 +110,22 @@ export default {
       const select_position_ary = select_position();
       for(let i in select_position_ary){
         for(let j in select_position_ary[i]){
-          return_ary[i].push(
-            insta_data[
+          return_ary[i].push({
+            data: insta_data[
               get_num_data_ary[
                 select_position_ary[i][j]
               ]
-            ]
-          )
-          return_ary[i][j].position_id = [i, j];
+            ],
+            position_id : [i,j],
+            geted_flag : false,
+            display_flag : false
+          })
         }
       }
       this.udon_ary = return_ary;
     },
     udon_click: function(e){
-      this.select_object = this.udon_ary[e[0]][e[1]];
+      this.udon_ary[e[0]][e[1]].display_flag = !this.udon_ary[e[0]][e[1]].display_flag;
     }
   }
 }
