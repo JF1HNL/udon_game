@@ -1,7 +1,7 @@
 <template>
-  <div @click="udon_click()" :class="{ not : !display_flag }">
+  <div @click="udon_click()" :class="{ not : !display_flag, geted: !geted_flag}">
     <div>
-      <img :src="url" class="child geted" :class="{ not : !display_flag }">
+      <img :src="url" class="child" :class="{ not : !display_flag, geted : geted_flag}">
     </div>
   </div>
 </template>
@@ -13,7 +13,7 @@ img.not {
 img.geted {
   filter: grayscale(100%);
 }
-div.not {
+div.not { 
   background-color: blueviolet;
 }
 </style>

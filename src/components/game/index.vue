@@ -2,6 +2,7 @@
   <div>
     <h1>game</h1>
     <input type="button" value="result" @click="page(PAGE_NAME.result)" >
+    <input type="button" value="元に戻すボタン" @click="uragaesu()">
     <div v-for='(udon_ary_, j) in udon_ary' :key='j' class="parent">
       <Img
         v-for='(it, i) in udon_ary_'
@@ -9,7 +10,7 @@
         :display_flag="it.display_flag"
         :geted_flag="it.geted_flag"
         :url="url_maker(it.data.img)"
-        @select='udon_click(it.position_id)'
+        @select='udon_click(it)'
         class="child"
       />
     </div>
@@ -37,6 +38,15 @@ import {insta_data} from './data.js'
 export default {
   mounted: function(){
     this.shuffle_data();
+    this.geted_object_position_id = [];
+  },
+  computed: {
+    select_udon_ary: function(){
+      return this.udon_ary.flat().filter(udon => udon.display_flag && !udon.geted_flag)
+    },
+    geted_udon_ary: function(){
+      return this.udon_ary.flat().filter(udon => udon.geted_flag)
+    }
   },
   components: {
     Img
@@ -44,8 +54,9 @@ export default {
   data: function() {
     // PAGE_NAME
     return {
-      select_object: [],
       udon_ary: [],
+      message: '',
+      click_object: {},
       PAGE_NAME
     }
   },
@@ -124,8 +135,21 @@ export default {
       }
       this.udon_ary = return_ary;
     },
+    uragaesu: function(){
+      for(let i in this.select_udon_ary){
+        this.select_udon_ary[i].display_flag = false;
+      }
+    },
     udon_click: function(e){
-      this.udon_ary[e[0]][e[1]].display_flag = !this.udon_ary[e[0]][e[1]].display_flag;
+      if(e.geted_flag && e.display_flag){
+        return
+      }
+      e.display_flag = true;
+      const con = this.udon_ary.flat().filter(it => it.data.img === e.data.img);
+      if(con[0].display_flag && con[1].display_flag){
+        con[0].geted_flag = true;
+        con[1].geted_flag = true;
+      }
     }
   }
 }
