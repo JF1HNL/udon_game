@@ -11,10 +11,12 @@
     />
     <game 
       v-if="page_judge(PAGE_NAME.game)" 
+      :result_ary="result_ary"
       v-on:result='page_chenge(PAGE_NAME.result)'
     />
     <result
       v-if="page_judge(PAGE_NAME.result)"
+      :result_ary="result_ary"
       v-on:top='page_chenge(PAGE_NAME.top)'
     />
   </div>
@@ -41,6 +43,7 @@ export default {
   data: function(){
     return {
       PAGE_NAME,
+      result_ary: [],
       page: 'top'
     }
   },

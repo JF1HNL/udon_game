@@ -1,11 +1,18 @@
 <template>
   <div>
     <h1>game</h1>
-    <input type="button" value="result" @click="page(PAGE_NAME.result)" >
-    <input type="button" value="元に戻すボタン" @click="uragaesu()">
+    <div v-if="tesuu_num">
+      <div>残り手数:{{ tesuu_num }}</div>
+      <input v-if="reset_flag" type="button" value="次のうどん！" @click="reset()">
+      <input v-if="reverse_flag" type="button" value="元に戻すボタン" @click="uragaesu()">
+    </div>
+    <div v-else>
+      <div v-if="!tesuu_num">終了！</div>
+      <input type="button" value="結果発表！" @click="page(PAGE_NAME.result)" >
+    </div>
     <div v-for='(udon_ary_, j) in udon_ary' :key='j' class="parent">
       <Img
-        v-for='(it, i) in udon_ary_'
+        v-for='(it, i) in udon_ary_' 
         :key='i'
         :display_flag="it.display_flag"
         :geted_flag="it.geted_flag"
@@ -37,15 +44,14 @@ import {insta_data} from './data.js'
 
 export default {
   mounted: function(){
-    this.shuffle_data();
-    this.geted_object_position_id = [];
+    this.reset();
   },
   computed: {
-    select_udon_ary: function(){
-      return this.udon_ary.flat().filter(udon => udon.display_flag && !udon.geted_flag)
+    reverse_flag: function(){
+      return this.udon_ary.flat().filter(udon => udon.display_flag && !udon.geted_flag).length == 2
     },
-    geted_udon_ary: function(){
-      return this.udon_ary.flat().filter(udon => udon.geted_flag)
+    reset_flag: function(){
+      return this.udon_ary.flat().filter(udon => udon.geted_flag).length == this.udon_ary.flat().length
     }
   },
   components: {
@@ -54,6 +60,7 @@ export default {
   data: function() {
     // PAGE_NAME
     return {
+      tesuu_num: 50,
       udon_ary: [],
       message: '',
       click_object: {},
@@ -73,14 +80,17 @@ export default {
         const return_ary = [];
         for(let i = 0; i < 6; i++){
           while(true){
-            const random_num = Math.floor(Math.random() * insta_data.length)
+            let random_num = Math.floor(1 + Math.random() * insta_data.length)
             // 判定
             for(let j in return_ary){
-              if(return_ary[j] === random_num){
-                continue;
+              if(return_ary[j] === random_num - 1){
+                random_num = 0;
               }
             }
-            return_ary.push(random_num);
+            if(!random_num){
+              continue
+            }
+            return_ary.push(random_num - 1);
             break;
           }
         }
@@ -135,17 +145,29 @@ export default {
       }
       this.udon_ary = return_ary;
     },
+    reset: function(){
+      this.shuffle_data();
+      this.geted_object_position_id = [];
+    },
     uragaesu: function(){
-      for(let i in this.select_udon_ary){
-        this.select_udon_ary[i].display_flag = false;
+      const select_udon_ary = this.udon_ary.flat().filter(udon => udon.display_flag && !udon.geted_flag)
+      for(let i in select_udon_ary){
+        select_udon_ary[i].display_flag = false;
       }
     },
     udon_click: function(e){
       if(e.geted_flag && e.display_flag){
         return
       }
+      if(this.reverse_flag){
+        return
+      }
+      if(!this.tesuu_num){
+        return
+      }
+      this.tesuu_num--;
       e.display_flag = true;
-      const con = this.udon_ary.flat().filter(it => it.data.img === e.data.img);
+      const con = this.udon_ary.flat().filter(it => it.data.id === e.data.id);
       if(con[0].display_flag && con[1].display_flag){
         con[0].geted_flag = true;
         con[1].geted_flag = true;
