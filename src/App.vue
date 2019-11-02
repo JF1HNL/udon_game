@@ -11,8 +11,7 @@
     />
     <game 
       v-if="page_judge(PAGE_NAME.game)" 
-      :result_ary="result_ary"
-      v-on:result='page_chenge(PAGE_NAME.result)'
+      v-on:receive='result_receive'
     />
     <result
       v-if="page_judge(PAGE_NAME.result)"
@@ -48,6 +47,10 @@ export default {
     }
   },
   methods: {
+    result_receive: function(ary){
+      this.result_ary = ary;
+      this.page_chenge(PAGE_NAME.result);
+    },
     page_judge: function(e){
       if(this.page === e){
         return true

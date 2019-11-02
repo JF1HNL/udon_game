@@ -8,7 +8,7 @@
     </div>
     <div v-else>
       <div v-if="!tesuu_num">終了！</div>
-      <input type="button" value="結果発表！" @click="page(PAGE_NAME.result)" >
+      <input type="button" value="結果発表！" @click="page()" >
     </div>
     <div v-for='(udon_ary_, j) in udon_ary' :key='j' class="parent">
       <Img
@@ -60,8 +60,9 @@ export default {
   data: function() {
     // PAGE_NAME
     return {
-      tesuu_num: 50,
+      tesuu_num: 10,
       udon_ary: [],
+      geted_udon_ary: [],
       message: '',
       click_object: {},
       PAGE_NAME
@@ -69,7 +70,7 @@ export default {
   },
   methods: {
     page: function(){
-      this.$emit(PAGE_NAME.result)
+      this.$emit('receive', this.geted_udon_ary);
     },
     url_maker: function(e){
       return `https://www.instagram.com/p/${e}/media/?size=m`
@@ -171,6 +172,7 @@ export default {
       if(con[0].display_flag && con[1].display_flag){
         con[0].geted_flag = true;
         con[1].geted_flag = true;
+        this.geted_udon_ary.push(con[0].data)
       }
     }
   }
