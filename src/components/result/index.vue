@@ -4,6 +4,7 @@
     <div v-for='(it, i) in result_ary' :key=i>
       <item  :result_item=it :id=i />
     </div>
+    <div>合計{{ sum_price }}円</div>
     <input type="button" value="top" @click="page(PAGE_NAME.top)" >
   </div>
 </template>
@@ -18,6 +19,16 @@ export default {
   ],
   components: {
     item
+  },
+  computed: {
+    sum_price: function(){
+      let ret = 0;
+      for(let i in result_ary){
+        for(let j in result_ary[i].menu){
+          ret += result_ary[i].menu[j].price
+        }
+      }
+    }
   },
   data: function() {
     // PAGE_NAME
