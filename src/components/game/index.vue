@@ -60,7 +60,7 @@ export default {
   data: function() {
     // PAGE_NAME
     return {
-      tesuu_num: 10,
+      tesuu_num: 50,
       udon_ary: [],
       geted_udon_ary: [],
       message: '',
