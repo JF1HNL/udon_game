@@ -1,14 +1,14 @@
 <template>
   <div>
-    <h1>game</h1>
     <div v-if="tesuu_num">
-      <div>残り手数:{{ tesuu_num }}</div>
-      <input v-if="reset_flag" type="button" value="次のうどん！" @click="reset()">
-      <input v-if="reverse_flag" type="button" value="元に戻すボタン" @click="uragaesu()">
+      <div class='tesuu'>残り手数:{{ tesuu_num }}</div>
+      <input v-if="reset_flag" type="button" ontouchstart=”” value="次のうどん！" @click="reset()">
+      <input v-else-if="reverse_flag" type="button" ontouchstart=”” value="元に戻すボタン" @click="uragaesu()">
+      <div v-else class='message'>うどんを選択してください！</div>
     </div>
     <div v-else>
       <div v-if="!tesuu_num">終了！</div>
-      <input type="button" value="結果発表！" @click="page()" >
+      <input type="button" ontouchstart=”” value="結果発表！" @click="page()" >
     </div>
     <div v-for='(udon_ary_, j) in udon_ary' :key='j' class="parent">
       <Img
@@ -25,13 +25,32 @@
 </template>
 
 <style>
+  .tesuu {
+    font-size : 7vmin;
+  }
   .parent {
     display: flex;
     justify-content: space-around;
+    margin: 3vmin 0;
   }
   .child {
-    height: 18.75vw;
-    width: 25vw;
+    height: 22.5vw;
+    width: 30vw;
+  }
+  input, .message, .tesuu{
+    font-size: 4vmax;
+    font-weight: bold;
+    padding: 2vmin 0;
+    border-radius: 4px;
+  }
+  .message {
+    padding: 3vh 0;
+  }
+</style>
+
+<style scoped>
+  input {
+    margin: 1.5vmax 2vmax;
   }
 </style>
 

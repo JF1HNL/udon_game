@@ -76,4 +76,25 @@ body{
   margin:0;
   padding: 0;
 }
+
+input {
+  margin: 2vmax;
+  font-size: 4vmax;
+  display: inline-block;
+  text-align: left;
+  border: 2px solid #b6694b;
+  color: #b6694b;
+  background-color: #C6BA85;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 2vmin 8vmin;
+  border-radius: 4px;
+  -webkit-appearance: none;
+}
+
+input:hover {
+  background-color: #b6694b;
+  border-color: #b6694b;
+  color: #C6BA85;
+}
 </style>
