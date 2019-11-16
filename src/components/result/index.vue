@@ -23,11 +23,12 @@ export default {
   computed: {
     sum_price: function(){
       let ret = 0;
-      for(let i in result_ary){
-        for(let j in result_ary[i].menu){
-          ret += result_ary[i].menu[j].price
+      for(let i in this.result_ary){
+        for(let j in this.result_ary[i].menu){
+          ret += this.result_ary[i].menu[j].price
         }
       }
+      return ret;
     }
   },
   data: function() {
