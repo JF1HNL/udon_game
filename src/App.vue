@@ -65,12 +65,15 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Gothic&display=swap&subset=japanese');
+body{
+  background-color: #C5AE45;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Sawarabi Gothic', sans-serif;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #B6694A;
+  margin:0;
+  padding: 0;
 }
 </style>
