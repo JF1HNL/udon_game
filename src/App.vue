@@ -44,7 +44,7 @@ export default {
     return {
       PAGE_NAME,
       result_ary: insta_data,
-      page: 'result'
+      page: 'top'
     }
   },
   methods: {
