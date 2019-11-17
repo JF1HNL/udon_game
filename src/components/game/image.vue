@@ -1,5 +1,5 @@
 <template>
-  <div @click="udon_click()" class="function_div" :class="{ not : !display_flag, geted: !geted_flag}">
+  <div @click="udon_click()" class="function_div" :class="{ not : !display_flag, geted: !geted_flag}"  ontouchstart=””>
     <div>
       <img :src="url" class="child" :class="{ not : !display_flag, geted : geted_flag}">
     </div>
@@ -9,6 +9,7 @@
 <style>
 .function_div{
   border: 2px solid #b6694b;
+  border-radius: 4px;
 }
 img {
   pointer-events: none;
@@ -21,6 +22,9 @@ img.geted {
 }
 div.not { 
   background-color: #C6BA85;
+}
+div.not:hover {
+  background-color: #b6694b;
 }
 </style>
 

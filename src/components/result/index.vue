@@ -1,13 +1,25 @@
 <template>
   <div>
-    <h1>結果発表！</h1>
+    <div class="result_title">結果発表</div>
+    <div class='geted_udon'>ゲットしたうどん一覧</div>
     <div v-for='(it, i) in result_ary' :key=i>
       <item  :result_item=it :id=i />
     </div>
-    <div>合計{{ sum_price }}円</div>
+    <div class="sum">合計{{ sum_price }}円</div>
     <input type="button" value="top" @click="page(PAGE_NAME.top)" >
   </div>
 </template>
+
+<style>
+  .result_title{
+    font-size: 9vmin;
+    font-weight: 700;
+    margin-top: 2vh;
+  }
+  .geted_udon, .sum {
+    font-size: 5vmin;
+  }
+</style>
 
 <script>
 import {PAGE_NAME} from '../../const.js'

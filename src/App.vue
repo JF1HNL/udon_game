@@ -30,6 +30,7 @@ import result from './components/result/index.vue'
 import {PAGE_NAME} from './const.js'
 // import test from './const.js'
 
+import {insta_data} from './components/game/data.js'
 
 export default {
   name: 'app',
@@ -42,8 +43,8 @@ export default {
   data: function(){
     return {
       PAGE_NAME,
-      result_ary: [],
-      page: 'top'
+      result_ary: insta_data,
+      page: 'result'
     }
   },
   methods: {
