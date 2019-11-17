@@ -10,6 +10,9 @@
 .function_div{
   border: 2px solid #b6694b;
 }
+img {
+  pointer-events: none;
+}
 img.not {
   opacity: 0;
 }
