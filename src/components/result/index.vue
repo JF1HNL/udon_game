@@ -6,7 +6,7 @@
       <item  :result_item=it :id=i />
     </div>
     <div class="sum">合計{{ sum_price }}円</div>
-    <input type="button" value="top" @click="page(PAGE_NAME.top)" >
+    <input type="button" value="最初に戻る" @click="page(PAGE_NAME.top)" >
   </div>
 </template>
 

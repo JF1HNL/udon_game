@@ -2,8 +2,15 @@
   <div class="item_parent">
     <div class="item">
       <div v-for='(it, i) in result_item.menu' :key=i>
-        <div>{{ it.name }}</div>
-        <div>{{ it.price }}円</div>
+        <div v-if="length_judge(it.name)">
+          <div>
+            {{ it.name }}
+          </div>
+          <div class="left">
+            {{ it.price }}円
+          </div>
+        </div>
+        <div v-else>{{ it.name }}：{{ it.price }}円</div>
       </div>
     </div>
   </div>
@@ -21,6 +28,12 @@
   margin: 1vh auto;
   padding: 2vmin;
 }
+.long {
+  font-size: 3vmin;
+}
+.left {
+  text-align: right;
+}
 </style>
 
 <script>
@@ -28,6 +41,14 @@ export default {
   props: [
     'result_item',
     'id'
-  ]
+  ],
+  methods :{
+    length_judge: function(e){
+      if(e.length > 12){
+        return true;
+      }
+      return false;
+    }
+  }
 }
 </script>
