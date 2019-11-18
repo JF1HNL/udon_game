@@ -7,25 +7,25 @@
 </template>
 
 <style>
-.function_div{
-  border: 2px solid #b6694b;
-  border-radius: 4px;
-}
-img {
-  pointer-events: none;
-}
-img.not {
-  opacity: 0;
-}
-img.geted {
-  filter: grayscale(100%);
-}
-div.not { 
-  background-color: #C6BA85;
-}
-div.not:hover {
-  background-color: #b6694b;
-}
+  .function_div{
+    border: 2px solid #b6694b;
+    border-radius: 4px;
+  }
+  img {
+    pointer-events: none;
+  }
+  img.not {
+    opacity: 0;
+  }
+  img.geted {
+    filter: grayscale(100%);
+  }
+  div.not { 
+    background-color: #C6BA85;
+  }
+  div.not:active {
+    background-color: #b6694b;
+  }
 </style>
 
 <script>

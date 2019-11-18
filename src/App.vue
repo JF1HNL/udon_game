@@ -44,7 +44,7 @@ export default {
     return {
       PAGE_NAME,
       result_ary: insta_data,
-      page: 'top'
+      page: 'recture'
     }
   },
   methods: {
@@ -73,7 +73,7 @@ body{
 #app {
   font-family: 'Sawarabi Gothic', sans-serif;
   text-align: center;
-  color: #B6694A;
+  color: #7D5B93;
   margin:0;
   padding: 0;
 }
@@ -93,7 +93,7 @@ input {
   -webkit-appearance: none;
 }
 
-input:hover {
+input:active {
   background-color: #b6694b;
   border-color: #b6694b;
   color: #C6BA85;

@@ -15,7 +15,7 @@
 
 <style>
 .title{
-  font-size: 9vmax;
+  font-size: 15vmin;
   margin-top: 20vh;
   font-weight: 700;
 }
@@ -23,7 +23,7 @@
 </style>
 
 <script>
-import Insta from '../parts/button.vue'
+import Insta from '../parts/insta.vue'
 import {PAGE_NAME} from '../../const.js'
 
 export default {

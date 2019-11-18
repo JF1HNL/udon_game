@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="button" value="Instagramはこちら！" ontouchstart=”” @click="go_insta()">
+    <input type="button" value="Twitterはこちら！" ontouchstart=”” @click="go_twitter()">
   </div>
 </template>
 
@@ -20,7 +20,7 @@ input {
   -webkit-appearance: none;
 }
 
-input:hover {
+input:active {
   background-color: #b6694b;
   border-color: #b6694b;
   color: #C6BA85;
@@ -30,8 +30,8 @@ input:hover {
 <script>
 export default {
   methods: {
-    go_insta: function(){
-      location.href = 'https://www.instagram.com/jf1hnl/'
+    go_twitter: function(){
+      location.href = 'https://www.twitter.com/jf1hnl/'
     }
   }
 }

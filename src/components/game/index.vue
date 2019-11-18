@@ -3,8 +3,8 @@
     <div v-if="tesuu_num">
       <div class='tensuu'>残り手数:{{ tesuu_num }}</div>
       <input v-if="reset_flag" type="button" ontouchstart=”” value="次のうどん！" @click="reset()">
-      <input v-else-if="reverse_flag" type="button" ontouchstart=”” value="元に戻すボタン" @click="uragaesu()">
-      <div v-else class='message'>うどんを選択してください！</div>
+      <input v-else-if="reverse_flag" type="button" ontouchstart=”” value="元に戻す" @click="uragaesu()">
+      <div v-else class='message'>裏向きカードを選んでね！</div>
     </div>
     <div v-else>
       <div class="tensuu" v-if="!tesuu_num">終了！</div>
