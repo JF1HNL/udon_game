@@ -15,7 +15,7 @@
 
 <style>
 .title{
-  font-size: 9vmax;
+  font-size: 15vmin;
   margin-top: 20vh;
   font-weight: 700;
 }
