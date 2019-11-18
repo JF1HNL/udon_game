@@ -93,7 +93,7 @@ input {
   -webkit-appearance: none;
 }
 
-input:hover {
+input:active {
   background-color: #b6694b;
   border-color: #b6694b;
   color: #C6BA85;

@@ -23,7 +23,7 @@
   div.not { 
     background-color: #C6BA85;
   }
-  div.not:hover {
+  div.not:active {
     background-color: #b6694b;
   }
 </style>
