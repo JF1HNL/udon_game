@@ -21,7 +21,7 @@
       <div class="recture_child_title">このゲームについて</div>
       <div class="recture_child_body">
         <div>ここに表示されるうどんの画像は作者が実際に食べたうどんの画像です。</div>
-        <div>これらの画像はInstagramにのっています。</div>
+        <div>これらの画像はInstagramやTwitterにのっています。</div>
         <div>よかったらチェックしてみてください！</div>
         <Insta/>
         <Twitter/>
