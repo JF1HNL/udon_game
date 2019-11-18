@@ -23,7 +23,7 @@
 </style>
 
 <script>
-import Insta from '../parts/button.vue'
+import Insta from '../parts/insta.vue'
 import {PAGE_NAME} from '../../const.js'
 
 export default {

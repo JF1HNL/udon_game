@@ -24,6 +24,7 @@
         <div>これらの画像はInstagramにのっています。</div>
         <div>よかったらチェックしてみてください！</div>
         <Insta/>
+        <Twitter/>
       </div>
     </div>
     <input type="button" value="戻る" @click="page(PAGE_NAME.top)" >
@@ -62,11 +63,13 @@
 
 <script>
 import {PAGE_NAME} from '../../const.js'
-import Insta from '../parts/button.vue'
+import Insta from '../parts/insta.vue'
+import Twitter from '../parts/twitter.vue'
 
 export default {
   components: {
-    Insta
+    Insta,
+    Twitter
   },
   data: function() {
     // PAGE_NAME
