@@ -24,6 +24,7 @@
 <script>
 import {PAGE_NAME} from '../../const.js'
 import item from './item.vue'
+import func from '../../../vue-temp/vue-editor-bridge';
 
 export default {
   props: [
@@ -52,6 +53,9 @@ export default {
   methods: {
     page: function(){
       this.$emit(PAGE_NAME.top)
+    },
+    go_form: function(){
+      this.$emit('pricesent', this.sum_price)
     }
   }
 }

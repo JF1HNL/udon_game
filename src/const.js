@@ -4,7 +4,8 @@ const PAGE_NAME = {
   top: 'top',
   recture: 'recture',
   game: 'game',
-  result: 'result'
+  result: 'result',
+  form: 'form'
 }
 
 const INSTA = 'instagram';

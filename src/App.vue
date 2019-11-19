@@ -16,6 +16,12 @@
     <result
       v-if="page_judge(PAGE_NAME.result)"
       :result_ary="result_ary"
+      v-on:pricesent='result_price'
+      v-on:top='page_chenge(PAGE_NAME.top)'
+    />
+    <formcompornent
+      v-if="page_judge(PAGE_NAME.form)"
+      :price="price"
       v-on:top='page_chenge(PAGE_NAME.top)'
     />
   </div>
@@ -26,6 +32,7 @@ import top from './components/top/index.vue'
 import recture from './components/recture/index.vue'
 import game from './components/game/index.vue'
 import result from './components/result/index.vue'
+import formcompornent from './components/form/index.vue'
 
 import {PAGE_NAME} from './const.js'
 // import test from './const.js'
@@ -39,18 +46,25 @@ export default {
     recture,
     game,
     result
+    ,
+    formcompornent
   },
   data: function(){
     return {
       PAGE_NAME,
       result_ary: insta_data,
-      page: 'top'
+      price: 10,
+      page: 'form'
     }
   },
   methods: {
     result_receive: function(ary){
       this.result_ary = ary;
       this.page_chenge(PAGE_NAME.result);
+    },
+    result_price: function(num){
+      this.price = num;
+      this.page_chenge(PAGE_NAME.form);
     },
     page_judge: function(e){
       if(this.page === e){
