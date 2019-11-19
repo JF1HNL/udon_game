@@ -1,9 +1,11 @@
 <template>
   <div class="item_parent">
     <div class="item">
+      <div>{{ result_item.date }}</div>
+      <img :src="url_maker(result_item.img)" alt="">
       <div v-for='(it, i) in result_item.menu' :key=i>
         <div v-if="length_judge(it.name)">
-          <div>
+          <div class="long">
             {{ it.name }}
           </div>
           <div class="left">
@@ -29,7 +31,7 @@
   padding: 2vmin;
 }
 .long {
-  font-size: 3vmin;
+  white-space: nowrap;
 }
 .left {
   text-align: right;
@@ -48,6 +50,9 @@ export default {
         return true;
       }
       return false;
+    },
+    url_maker: function(e){
+      return `https://www.instagram.com/p/${e}/media/?size=m`
     }
   }
 }
