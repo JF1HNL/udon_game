@@ -24,6 +24,7 @@
       :price="price"
       v-on:page='page_chenge'
     />
+    <rankigncompornent/>
   </div>
 </template>
 
@@ -33,6 +34,7 @@ import recture from './components/recture/index.vue'
 import game from './components/game/index.vue'
 import result from './components/result/index.vue'
 import formcompornent from './components/form/index.vue'
+import rankigncompornent from './components/ranking/index.vue'
 
 import {PAGE_NAME} from './const.js'
 // import test from './const.js'
@@ -45,9 +47,9 @@ export default {
     top,
     recture,
     game,
-    result
-    ,
-    formcompornent
+    result,
+    formcompornent,
+    rankigncompornent
   },
   data: function(){
     return {
