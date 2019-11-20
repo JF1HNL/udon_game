@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class='title'>udon-game</div>
+    <div class='title'>
+      <udongametitle/>
+    </div>
     <div>
       <input type="button" value="遊び方" ontouchstart=”” @click="page(PAGE_NAME.recture)" >
     </div>
@@ -13,22 +15,21 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .title{
-  font-size: 15vmin;
   margin-top: 20vh;
-  font-weight: 700;
 }
-
 </style>
 
 <script>
 import Insta from '../parts/insta.vue'
+import udongametitle from '../parts/udon_game.vue'
 import {PAGE_NAME} from '../../const.js'
 
 export default {
   components: {
-    Insta
+    Insta,
+    udongametitle
   },
   data: function() {
     // PAGE_NAME

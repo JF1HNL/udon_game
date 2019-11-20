@@ -16,7 +16,13 @@
     <result
       v-if="page_judge(PAGE_NAME.result)"
       :result_ary="result_ary"
+      v-on:pricesent='result_price'
       v-on:top='page_chenge(PAGE_NAME.top)'
+    />
+    <formcompornent
+      v-if="page_judge(PAGE_NAME.form)"
+      :price="price"
+      v-on:page='page_chenge'
     />
   </div>
 </template>
@@ -26,6 +32,7 @@ import top from './components/top/index.vue'
 import recture from './components/recture/index.vue'
 import game from './components/game/index.vue'
 import result from './components/result/index.vue'
+import formcompornent from './components/form/index.vue'
 
 import {PAGE_NAME} from './const.js'
 // import test from './const.js'
@@ -39,11 +46,14 @@ export default {
     recture,
     game,
     result
+    ,
+    formcompornent
   },
   data: function(){
     return {
       PAGE_NAME,
       result_ary: insta_data,
+      price: -1,
       page: 'top'
     }
   },
@@ -52,6 +62,10 @@ export default {
       this.result_ary = ary;
       this.page_chenge(PAGE_NAME.result);
     },
+    result_price: function(num){
+      this.price = num;
+      this.page_chenge(PAGE_NAME.form);
+    },
     page_judge: function(e){
       if(this.page === e){
         return true
@@ -59,6 +73,7 @@ export default {
       return false
     },
     page_chenge: function(e){
+      window.scrollTo(0, 0);
       this.page = e;
     }
   }
@@ -78,7 +93,7 @@ body{
   padding: 0;
 }
 
-input {
+input, button {
   margin: 2vmax;
   font-size: 4vmax;
   display: inline-block;
@@ -89,11 +104,12 @@ input {
   text-decoration: none;
   font-weight: bold;
   padding: 2vmin 8vmin;
+  text-align: center;
   border-radius: 4px;
   -webkit-appearance: none;
 }
 
-input:active {
+input:active, button:active {
   background-color: #b6694b;
   border-color: #b6694b;
   color: #C6BA85;

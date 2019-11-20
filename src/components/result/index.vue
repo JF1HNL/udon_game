@@ -6,7 +6,8 @@
       <item  :result_item=it :id=i />
     </div>
     <div class="sum">合計{{ sum_price }}円</div>
-    <input type="button" value="最初に戻る" @click="page(PAGE_NAME.top)" >
+    <input type="button" value="ランキングに登録する" @click="go_form()">
+    <input type="button" value="最初から" @click="page(PAGE_NAME.top)" >
   </div>
 </template>
 
@@ -24,6 +25,7 @@
 <script>
 import {PAGE_NAME} from '../../const.js'
 import item from './item.vue'
+
 
 export default {
   props: [
@@ -52,6 +54,9 @@ export default {
   methods: {
     page: function(){
       this.$emit(PAGE_NAME.top)
+    },
+    go_form: function(){
+      this.$emit('pricesent', this.sum_price)
     }
   }
 }
