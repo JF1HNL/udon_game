@@ -54,7 +54,7 @@ export default {
       PAGE_NAME,
       result_ary: insta_data,
       price: -1,
-      page: 'form'
+      page: 'top'
     }
   },
   methods: {
