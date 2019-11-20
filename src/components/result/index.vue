@@ -7,7 +7,7 @@
     </div>
     <div class="sum">合計{{ sum_price }}円</div>
     <input type="button" value="ランキングに登録する" @click="go_form()">
-    <input type="button" value="最初に戻る" @click="page(PAGE_NAME.top)" >
+    <input type="button" value="最初から" @click="page(PAGE_NAME.top)" >
   </div>
 </template>
 

@@ -1,24 +1,26 @@
 <template>
   <div>
     <udongametitle/>
-    <div class="subtitle">ランキング登録フォーム</div>
-    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdB3FvmSEcXI_LUr4PZm__IKmDYM-gNvVABDwhIRdg4fbzk5g/formResponse">
-      <label>今回のスコア</label>
-      <input type="text" name="entry.494011733" :value="price" readonly="readonly" class="notactive">
-      <label>ニックネームを</label>
-      <label >記入してください</label>
-      <input name="entry.304301637" type="text" placeholder="ニックネーム" value="通りすがりのうどんマニア">
-      <button :type="{ submit : send_button_flag }" name="button" value="送信" @click="msg++">
-        <font>送信</font>
-      </button>
+    <div v-if="!!(price + 1)">
+      <div class="subtitle">ランキング登録フォーム</div>
+      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdB3FvmSEcXI_LUr4PZm__IKmDYM-gNvVABDwhIRdg4fbzk5g/formResponse">
+        <label>今回のスコア</label>
+        <input type="text" name="entry.494011733" :value="price" readonly="readonly" class="notactive display">
+        <label>ニックネームを</label>
+        <label >記入してください</label>
+        <input name="entry.304301637" type="text" placeholder="ニックネーム" value="通りすがりのうどんマニア" class="display">
+        <button :type="{ submit : send_button_flag }" name="button" value="送信" @click="msg++">
+          <font>送信</font>
+        </button>
+      </form> 
       <input type="button" value="結果ページに戻る" @click="page(PAGE_NAME.result)">
-      <input type="button" value="最初から" @click="page(PAGE_NAME.top)">
-    </form> 
+    </div>
+    <input type="button" value="最初から" @click="page(PAGE_NAME.top)"> 
   </div>
 </template>
 
 <style scoped>
-input{
+input.display{
   width: 75vw;
   margin: 1vh auto 2vh;
   padding: 2vmin;
