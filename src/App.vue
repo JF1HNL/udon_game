@@ -22,7 +22,7 @@
     <formcompornent
       v-if="page_judge(PAGE_NAME.form)"
       :price="price"
-      v-on:top='page_chenge(PAGE_NAME.top)'
+      v-on:page='page_chenge'
     />
   </div>
 </template>
@@ -53,8 +53,8 @@ export default {
     return {
       PAGE_NAME,
       result_ary: insta_data,
-      price: 10,
-      page: 'form'
+      price: 0,
+      page: 'top'
     }
   },
   methods: {
@@ -73,6 +73,7 @@ export default {
       return false
     },
     page_chenge: function(e){
+      window.scrollTo(0, 0);
       this.page = e;
     }
   }
@@ -92,7 +93,7 @@ body{
   padding: 0;
 }
 
-input {
+input, button {
   margin: 2vmax;
   font-size: 4vmax;
   display: inline-block;
@@ -103,11 +104,12 @@ input {
   text-decoration: none;
   font-weight: bold;
   padding: 2vmin 8vmin;
+  text-align: center;
   border-radius: 4px;
   -webkit-appearance: none;
 }
 
-input:active {
+input:active, button:active {
   background-color: #b6694b;
   border-color: #b6694b;
   color: #C6BA85;
