@@ -10,10 +10,10 @@
       <input class='start' type="button" ontouchstart=”” value="ゲームスタート！" @click="page(PAGE_NAME.game)" >
     </div>
     <div>
-      <Insta/>
+      <rankingbutton/>
     </div>
     <div>
-      <rankingbutton/>
+      <Insta/>
     </div>
   </div>
 </template>
