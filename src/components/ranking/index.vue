@@ -4,22 +4,26 @@
   </div>
 </template>
 
+<script src='https://script.google.com/macros/s/AKfycbwOTB3-XX5bm0kcnyWQrgDPyC1w_bx9wf9lSVaFu2yW8td84Drc/exec?callback=getdata'>
+
+</script>
+
 <script>
 export default {
-  mounted: function(){
-    fetch('https://script.google.com/macros/s/AKfycbwOTB3-XX5bm0kcnyWQrgDPyC1w_bx9wf9lSVaFu2yW8td84Drc/exec', {mode: 'cors'})
-    .then(res => res.json())
-    .then(
-    result => {
-      this.data = result
-    },
-    error => {
-      console.log("errorらしい")
-    })
-  },
+  // mounted: function(){
+  //   fetch('https://script.google.com/macros/s/AKfycbwOTB3-XX5bm0kcnyWQrgDPyC1w_bx9wf9lSVaFu2yW8td84Drc/exec?callback=getdata')
+  //   .then(res => res.json())
+  //   .then(
+  //   result => {
+  //     this.data = result
+  //   },
+  //   error => {
+  //     console.log("errorらしい")
+  //   })
+  // },
   data: function(){
     return {
-      data_ary:[]
+      data_ary: getdata
     }
   }
 }
