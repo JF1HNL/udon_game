@@ -11,11 +11,19 @@
         <div>より高い値段の</div>
         <div>うどんをGETしよう！</div>
       </div>
-      <div class="recture_child_body">最後に揃えたうどんの値段が表示されます。より高い値段を目指そう！</div>
+      <div class="recture_child_body">最後に揃えたうどんの値段がスコアとして表示されます。より高いスコアを目指そう！</div>
     </div>
     <div class="recture_parent">
       <div class="recture_child_title">手数制限があります！</div>
       <div class="recture_child_body">ゲームをスタートすると上部に手数が表示されます！手数が0になったらゲーム終了です。</div>
+    </div>
+    <div class="recture_parent">
+      <div class="recture_child_title">ランキングに登録しよう！</div>
+      <div class="recture_child_body">
+        <div>GETしたスコアはランキングに登録することができます。</div>
+        <div>目指せ！ランク1位!</div>
+        <rankbutton/>
+      </div>
     </div>
     <div class="recture_parent">
       <div class="recture_child_title">このゲームについて</div>
@@ -49,8 +57,9 @@
 .recture_child_title {
   font-size: 3.5vmax;
 }
-.recture_child_body {
+.recture_child_body, .recture_child_body > div {
   font-size: 2.5vmax;
+  font-weight: 500;
 }
 </style>
 
@@ -65,11 +74,13 @@
 import {PAGE_NAME} from '../../const.js'
 import Insta from '../parts/insta.vue'
 import Twitter from '../parts/twitter.vue'
+import rankbutton from '../parts/ranking.vue'
 
 export default {
   components: {
     Insta,
-    Twitter
+    Twitter,
+    rankbutton
   },
   data: function() {
     // PAGE_NAME
