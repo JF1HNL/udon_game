@@ -12,6 +12,9 @@
     <div>
       <Insta/>
     </div>
+    <div>
+      <rankingbutton/>
+    </div>
   </div>
 </template>
 
@@ -24,12 +27,14 @@
 <script>
 import Insta from '../parts/insta.vue'
 import udongametitle from '../parts/udon_game.vue'
+import rankingbutton from '../parts/ranking.vue'
 import {PAGE_NAME} from '../../const.js'
 
 export default {
   components: {
     Insta,
-    udongametitle
+    udongametitle,
+    rankingbutton
   },
   data: function() {
     // PAGE_NAME
