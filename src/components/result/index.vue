@@ -7,6 +7,7 @@
     </div>
     <div class="sum">合計{{ sum_price }}円</div>
     <input type="button" value="ランキングに登録する" @click="go_form()">
+    <input type="button" value="結果をTweetする" @click="tweet()">
     <input type="button" value="最初から" @click="page(PAGE_NAME.top)" >
   </div>
 </template>
@@ -43,6 +44,19 @@ export default {
         }
       }
       return ret;
+    },
+    tweet_text: function() {
+      const content = {
+        url: window.location.href,
+        text: `【udon-game】\n私のスコアは${ this.sum_price }円です！\nあなたもチャレンジ！`,
+        tag: "udon-game"
+      };
+      for (let key in content) {
+        content[key] = encodeURIComponent(content[key]);
+      }
+      return `https://twitter.com/intent/tweet?url=${content.url}&text=${
+        content.text
+      }&hashtags=${content.tag}`;
     }
   },
   data: function() {
@@ -57,6 +71,9 @@ export default {
     },
     go_form: function(){
       this.$emit('pricesent', this.sum_price)
+    },
+    tweet: function(){
+      location.href = this.tweet_text;
     }
   }
 }
