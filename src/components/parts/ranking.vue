@@ -31,7 +31,7 @@ input:active {
 export default {
   methods: {
     go_ranking: function(){
-      location.href = 'https://docs.google.com/spreadsheets/d/1Vef-36hH8KKDv6EOx7GYoIztvKEtorUXflolKYGw9cc/edit#gid=1904245766&range=A1'
+      location.href = './ranking/'
     }
   }
 }
