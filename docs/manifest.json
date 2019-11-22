@@ -2,7 +2,7 @@
 	"name":				"udon-game",
 	"short_name":		"udon-game",
 	"description":		"",
-	"start_url":		"udon-game.jf1hnl.kim",
+	"start_url":		"https://udon-game.jf1hnl.kim/",
 	"display":			"standalone",
 	"orientation":		"any",
 	"background_color":	"#fff",
