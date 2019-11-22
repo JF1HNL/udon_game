@@ -49,7 +49,7 @@ export default {
       const content = {
         url: window.location.href,
         text: `【udon-game】\n私のスコアは${ this.sum_price }円です！\nあなたもチャレンジ！`,
-        tag: "udon-game"
+        tag: "udon_game"
       };
       for (let key in content) {
         content[key] = encodeURIComponent(content[key]);
