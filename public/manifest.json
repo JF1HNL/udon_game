@@ -1,13 +1,12 @@
 {
-	"name":				"",
-	"short_name":		"",
+	"name":				"udon-game",
+	"short_name":		"udon-game",
 	"description":		"",
-	"start_url":		"/",
+	"start_url":		"udon-game.jf1hnl.kim",
 	"display":			"standalone",
 	"orientation":		"any",
 	"background_color":	"#fff",
 	"theme_color":		"#fff",
-	"orientation":		"any",
 	"icons": [
 		{
 			"src": "/android-chrome-36x36.png",
