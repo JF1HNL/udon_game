@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>udon-game:ranking</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Sawarabi+Gothic&display=swap&subset=japanese');
+    body{
+      background-color: #C5AE45;
+      font-family: 'Sawarabi Gothic', sans-serif;
+      text-align: center;
+      color: #7D5B93;
+      margin:0;
+      padding: 0;
+    }
+    #loading{
+      font-size: 7vmin;
+      margin: 2vmin;
+    }
+    .title{
+      font-size: 15vmin;
+      font-weight: 700;
+    }
+    .subtitle{
+      font-size: 9vmin;
+      font-weight: 700;
+      margin-top: 2vh;
+    }
+    .ranking-parent{
+      background-color: #BDC085;
+      border: 2px solid #b6694b;
+      border-radius: 10px;
+      font-size: 5vmin;
+      margin: 3vmin;
+      padding: 2vmin;
+    }
+  </style>
+</head>
+<body>
+  <div id="ranking">
+    <div class="title">udon-game</div>
+    <div class="subtitle">ランキング</div>
+    <div id="loading">
+      <div>NowLoading...</div>
+      <div>Please wait...</div>
+    </div>
+  </div>
+  <script>
+    function loadJS(src){
+      var script = document.createElement('script');
+      script.src = src;
+      document.body.appendChild(script);
+    }
+    var getrankigndata = function(data){
+      const ranking_ary = data; // 2
+      const sort_ary = ranking_ary.sort(function(a,b){
+        return (a['スコア'] > b['スコア'] ? -1 : 1);
+      })
+      const ranking_html = document.querySelector('#ranking');
+      const nowloading = document.querySelector('#loading');
+      ranking_html.removeChild(nowloading);
+      for(let i = 0; i < sort_ary.length; i++){
+        if(!!!sort_ary[i]['スコア']){
+          break;
+        }
+        const rank_object = document.createElement('div');
+        rank_object.setAttribute('class', 'ranking-child-rank');
+        rank_object.innerHTML = `${i + 1}位`
+        const nicname_object = document.createElement('div');
+        nicname_object.setAttribute('class', 'ranking-child-name');
+        nicname_object.innerHTML = `${sort_ary[i]['ハンドルネーム']}さん`;
+        const price_object = document.createElement('div');
+        price_object.setAttribute('class', 'ranking-child-price');
+        price_object.innerHTML = `${sort_ary[i]['スコア']}円`;
+
+        const append_object = document.createElement('div');
+        append_object.setAttribute('class', 'ranking-parent');
+        append_object.appendChild(rank_object);
+        append_object.appendChild(nicname_object);
+        append_object.appendChild(price_object);
+        ranking_html.appendChild(append_object);
+      }
+    };
+    loadJS('https://script.google.com/macros/s/AKfycbwOTB3-XX5bm0kcnyWQrgDPyC1w_bx9wf9lSVaFu2yW8td84Drc/exec?callback=getrankigndata');
+  </script>
+</body>
+</html>
