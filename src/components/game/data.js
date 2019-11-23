@@ -134,6 +134,18 @@ const menu = {
     gyuutoro: {
       name: '牛とろうどん',
       price: 690
+    },
+    tizukamata: {
+      name: 'チーズ釜玉',
+      price: 520
+    },
+    umakaranikunikukamatama: {
+      name: 'うま辛肉々釜玉',
+      price: 650
+    },
+    tamagoankake: {
+      name: '玉子あんかけ',
+      price: 420
     }
   },
   tenpura: {
@@ -220,6 +232,18 @@ const menu = {
     imoimonokakiage: {
       name: 'イモイモのかき揚げ',
       price: 180
+    },
+    tubutubunokakiage : {
+      name: 'ツブツブのかき揚げ',
+      price: 180
+    },
+    sansyouika: {
+      name: '山椒イカ天',
+      price: 130
+    },
+    hotatenokakiage: {
+      name: 'ホタテのかき揚げ',
+      price:120
     }
   },
   omusubi: {
@@ -245,6 +269,10 @@ const menu = {
     },
     saketowakame: {
       name: '鮭とわかめのおにぎり',
+      price: 90
+    },
+    siomusubi: {
+      name: '塩むすび',
       price: 90
     }
   },
@@ -989,6 +1017,187 @@ const insta_data = [
     date: '2019-08-10',
     menu: [
       menu.udon.toritya_syu_negidare.return_object(size.nami)
+    ]
+  },
+  {
+    img: 'B1DOamKFA4m',
+    date: '2019-08-12',
+    menu: [
+      menu.udon.bukkake.return_object(size.nami),
+      menu.tenpura.kasiwa
+    ]
+  },
+  {
+    img: 'B1FqqXAFykH',
+    date: '2019-08-13',
+    menu: [
+      menu.udon.kake.return_object(size.dai),
+      menu.tenpura.tubutubunokakiage
+    ]
+  },
+  {
+    img: 'B1IxvD6lch4',
+    date: '2019-08-14',
+    menu: [
+      menu.udon.bukkake.return_object(size.nami),
+      menu.tenpura.tikuwa
+    ]
+  },
+  {
+    img: 'B1dlWGZFkBw',
+    date: '2019-08-22',
+    menu: [
+      menu.udon.bukkake.return_object(size.nami),
+      menu.udon.bukkake.return_object(size.nami),
+      menu.topping.daikonorosi
+    ]
+  },
+  {
+    img: 'B1krNdmlADX',
+    date: '2019-08-25',
+    menu: [
+      menu.udon.bukkake.return_object(size.nami),
+      menu.tenpura.tikuwa,
+      menu.tenpura.kasiwa
+    ]
+  },
+  {
+    img: 'B10u2WnlmLn',
+    date: '2019-08-31',
+    menu: [
+      menu.udon.kake.return_object(size.nami),
+      menu.tenpura.tikuwa
+    ]
+  },
+  {
+    img: 'B13QuXOFc09',
+    date: '2019-09-01',
+    menu: [
+      menu.udon.kamaage.return_object(size.nami),
+      menu.tenpura.sansyouika,
+      menu.tenpura.nasu,
+      menu.topping.onsentamago
+    ]
+  },
+  {
+    img: 'B2BtFyYlpvi',
+    date: '2019-09-05',
+    menu: [
+      menu.udon.zaru.return_object(size.nami),
+      menu.tenpura.hotatenokakiage
+    ]
+  },
+  {
+    img: 'B2YKBCFFw9e',
+    date: '2019-09-14',
+    menu: [
+      menu.udon.kamatama.return_object(size.nami),
+      menu.tenpura.ika
+    ]
+  },
+  {
+    img: 'B2k6GYolexS',
+    date: '2019-09-19',
+    menu: [
+      menu.udon.zaru.return_object(size.nami),
+      menu.tenpura.tikuwa
+    ]
+  },
+  {
+    img: 'B28Nx2uFZ84',
+    date: '2019-09-28',
+    menu: [
+      menu.udon.tizukamata.return_object(size.nami),
+      menu.tenpura.kasiwa
+    ]
+  },
+  {
+    img: 'B3EpAp1lrSn',
+    date: '2019-10-01',
+    menu: [
+      menu.udon.kamaage.return_object(size.nami),
+      menu.tenpura.satumaimo
+    ]
+  },
+  {
+    img: 'B3Lm0YWFMbc',
+    date: '2019-10-04',
+    menu: [
+      menu.udon.bukkake.return_object(size.nami),
+      menu.tenpura.kasiwa,
+      menu.omusubi.siomusubi
+    ]
+  },
+  {
+    img: 'B3hDrZil7wY',
+    date: '2019-10-12',
+    menu: [
+      menu.udon.bukkake.return_object(size.dai),
+      menu.tenpura.kasiwa
+    ]
+  },
+  {
+    img: 'B3wJLSTlC3U',
+    date: '2019-10-18',
+    menu: [
+      menu.udon.umakaranikunikukamatama.return_object(size.nami),
+      menu.tenpura.kasiwa
+    ]
+  },
+  {
+    img: 'B3ySUWOll7o',
+    date: '2019-10-19',
+    menu: [
+      menu.udon.bukkake.return_object(size.nami),
+      menu.tenpura.kasiwa,
+      menu.tenpura.satumaimo
+    ]
+  },
+  {
+    img: 'B36ArsAlvw6',
+    date: '2019-10-22',
+    menu: [
+      menu.udon.umakaranikunikukamatama.return_object(size.nami),
+      menu.tenpura.tikuwa
+    ]
+  },
+  {
+    img: 'B4RMdFQl5Oo',
+    date: '2019-10-31',
+    menu: [
+      menu.udon.bukkake.return_object(size.nami),
+      menu.tenpura.jyanbokanikama,
+      menu.tenpura.sansyouika
+    ]
+  },
+  {
+    img: 'B4UI-RVFdub',
+    date: '2019-11-01',
+    menu: [
+      menu.udon.kamaage.return_object(size.nami)
+    ]
+  },
+  {
+    img: 'B4oaXO5lgw_',
+    date: '2019-11-09',
+    menu: [
+      menu.udon.tamagoankake.return_object(size.nami),
+      menu.tenpura.tikuwa
+    ]
+  },
+  {
+    img: 'B46oq_yFlOi',
+    date: '2019-11-16',
+    menu: [
+      menu.udon.kake.return_object(size.nami),
+      menu.tenpura.kasiwa
+    ]
+  },
+  {
+    img: 'B5KeCWHF0rg',
+    date: '2019-11-22',
+    menu:[
+      menu.udon.kamaage.return_object(size.nami)
     ]
   }
 ];
