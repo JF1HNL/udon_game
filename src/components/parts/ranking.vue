@@ -31,7 +31,7 @@ input:active {
 export default {
   methods: {
     go_ranking: function(){
-      location.href = './ranking/'
+      window.open('./ranking/');
     }
   }
 }
