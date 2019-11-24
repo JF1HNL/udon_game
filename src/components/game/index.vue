@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="tesuu_num">
-      <div class='tensuu'>残り手数:{{ tesuu_num }}</div>
+      <div class='tensuu'>お手つきできる回数:{{ tesuu_num }}</div>
       <input v-if="reset_flag" type="button" ontouchstart=”” value="次のうどん！" @click="reset()">
       <input v-else-if="reverse_flag" type="button" ontouchstart=”” value="元に戻す" @click="uragaesu()">
       <div v-else class='message'>裏向きカードを選んでね！</div>
@@ -84,7 +84,7 @@ export default {
   data: function() {
     // PAGE_NAME
     return {
-      tesuu_num: 50,
+      tesuu_num: 20,
       udon_ary: [],
       geted_udon_ary: [],
       message: '',
@@ -184,13 +184,14 @@ export default {
       if(e.geted_flag || e.display_flag || this.reverse_flag || !this.tesuu_num){
         return
       }
-      this.tesuu_num--;
       e.display_flag = true;
       const con = this.udon_ary.flat().filter(it => it.data.id === e.data.id);
       if(con[0].display_flag && con[1].display_flag){
         con[0].geted_flag = true;
         con[1].geted_flag = true;
         this.geted_udon_ary.push(con[0].data)
+      }else if(this.reverse_flag){
+        this.tesuu_num--;
       }
     }
   }

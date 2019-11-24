@@ -14,8 +14,8 @@
       <div class="recture_child_body">最後に揃えたうどんの値段がスコアとして表示されます。より高いスコアを目指そう！</div>
     </div>
     <div class="recture_parent">
-      <div class="recture_child_title">手数制限があります！</div>
-      <div class="recture_child_body">ゲームをスタートすると上部に手数が表示されます！手数が0になったらゲーム終了です。</div>
+      <div class="recture_child_title">お手つきを20回したら終了！</div>
+      <div class="recture_child_body">ゲームをスタートすると上部にお手つきの残り回数が表示されます！それが0になったらゲーム終了です。</div>
     </div>
     <div class="recture_parent">
       <div class="recture_child_title">ランキングに登録しよう！</div>
