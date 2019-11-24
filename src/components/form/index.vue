@@ -3,7 +3,7 @@
     <udongametitle/>
     <div v-if="!!(price + 1)">
       <div class="subtitle">ランキング登録フォーム</div>
-      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdB3FvmSEcXI_LUr4PZm__IKmDYM-gNvVABDwhIRdg4fbzk5g/formResponse">
+      <form :action="action_url">
         <label>今回のスコア</label>
         <input type="text" name="entry.494011733" :value="price" readonly="readonly" class="notactive display">
         <label>ニックネームを</label>
@@ -72,7 +72,8 @@ export default {
     return {
       send_button_flag: true,
       msg: 0,
-      PAGE_NAME
+      PAGE_NAME,
+      action_url: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdB3FvmSEcXI_LUr4PZm__IKmDYM-gNvVABDwhIRdg4fbzk5g/formResponse'
     }
   },
   methods: {
@@ -81,6 +82,9 @@ export default {
     },
     page: function(e){
       this.$emit('page', e);
+    },
+    send_form: function(e){
+
     }
   }
 }
